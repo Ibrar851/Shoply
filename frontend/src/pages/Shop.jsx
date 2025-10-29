@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import api from "../utils/api";
 
-// 🖼️ Local fallback images
-import SmartphoneX from "../assets/Smartphone.jpg";
-import Headphones from "../assets/Headphones.jpg";
-import GamingLaptop from "../assets/Gaminglaptop.jpg";
-import SmartWatch from "../assets/SmartWatch.jpg";
-import BluetoothSpeaker from "../assets/BluetoothSpeaker.jpg";
+// 🖼️ Local fallback images (all lowercase filenames)
+import smartphone from "../assets/smartphone.jpg";
+import headphones from "../assets/headphones.jpg";
+import gaminglaptop from "../assets/gaminglaptop.jpg";
+import smartwatch from "../assets/smartwatch.jpg";
+import bluetoothspeaker from "../assets/bluetoothspeaker.jpg";
 
 export default function Shop() {
   const { addToCart } = useCart();
@@ -19,11 +19,11 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
 
   const localProducts = [
-    { id: "local1", name: "Smartphone X", price: 599, category: "Phones", image: SmartphoneX },
-    { id: "local2", name: "Headphones", price: 199, category: "Audio", image: Headphones },
-    { id: "local3", name: "Gaming Laptop", price: 1299, category: "Laptops", image: GamingLaptop },
-    { id: "local4", name: "Smart Watch", price: 149, category: "Wearables", image: SmartWatch },
-    { id: "local5", name: "Bluetooth Speaker", price: 89, category: "Audio", image: BluetoothSpeaker },
+    { id: "local1", name: "Smartphone X", price: 599, category: "Phones", image: smartphone },
+    { id: "local2", name: "Headphones", price: 199, category: "Audio", image: headphones },
+    { id: "local3", name: "Gaming Laptop", price: 1299, category: "Laptops", image: gaminglaptop },
+    { id: "local4", name: "Smart Watch", price: 149, category: "Wearables", image: smartwatch },
+    { id: "local5", name: "Bluetooth Speaker", price: 89, category: "Audio", image: bluetoothspeaker },
   ];
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export default function Shop() {
                     <Link to={`/product/${p._id || p.id}`}>
                       <div className="relative group">
                         <img
-                          src={p.image || SmartphoneX}
+                          src={p.image || smartphone}
                           alt={p.name}
                           className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
